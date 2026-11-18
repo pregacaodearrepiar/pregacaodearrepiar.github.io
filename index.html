@@ -112,8 +112,6 @@
     </a>
   </div>
 
-  <div class="qr" id="qrbox"><div id="qr"></div><p>APONTE A CÂMERA DO CELULAR</p></div>
-
   <p class="verse">“Conheçamos e prossigamos em conhecer o Senhor.”</p>
   <div class="ref">OSÉIAS 6:3</div>
 
@@ -121,7 +119,6 @@
 </main>
 <div class="toast" id="toast">Link copiado!</div>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
 <script>
 /* ===================== EDITE SÓ ESTA PARTE ===================== */
 const CANAL_WHATSAPP = "https://whatsapp.com/channel/0029VbENItS8F2pBgZseVH0t";
@@ -166,14 +163,6 @@ document.getElementById("copy").addEventListener("click", () => {
   try { navigator.clipboard.writeText(CANAL_WHATSAPP).then(done, () => { prompt("Copie o link:", CANAL_WHATSAPP); }); }
   catch(e){ prompt("Copie o link:", CANAL_WHATSAPP); }
 });
-
-if (!isMobile && typeof qrcode === "function"){
-  try {
-    const q = qrcode(0, "M"); q.addData(CANAL_WHATSAPP); q.make();
-    document.getElementById("qr").innerHTML = q.createSvgTag({cellSize: 5, margin: 2});
-    document.getElementById("qrbox").style.display = "block";
-  } catch(e){}
-}
 </script>
 </body>
 </html>
